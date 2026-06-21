@@ -1,0 +1,61 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  body {
+    @apply bg-background text-white font-sans overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-surface/40 backdrop-blur-md border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)];
+  }
+  
+  .glass-card {
+    @apply bg-surface/60 backdrop-blur-lg border border-white/5 rounded-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.36)];
+  }
+
+  .text-glow-primary {
+    text-shadow: 0 0 10px rgba(0, 229, 168, 0.5), 0 0 20px rgba(0, 229, 168, 0.3);
+  }
+
+  .text-glow-danger {
+    text-shadow: 0 0 10px rgba(255, 77, 77, 0.5), 0 0 20px rgba(255, 77, 77, 0.3);
+  }
+  
+  .aurora-bg {
+    background-image: 
+      radial-gradient(circle at top left, rgba(0, 229, 168, 0.15), transparent 40%),
+      radial-gradient(circle at bottom right, rgba(51, 161, 253, 0.15), transparent 40%);
+    @apply animate-aurora;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(13, 19, 38, 0.5); 
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2); 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3); 
+}
+
+/* MapLibre specific overrides to match dark theme */
+.maplibregl-popup-content {
+  @apply bg-surface border border-white/10 text-white rounded-xl shadow-2xl;
+}
+
+.maplibregl-popup-anchor-bottom .maplibregl-popup-tip {
+  border-top-color: #0D1326;
+}
