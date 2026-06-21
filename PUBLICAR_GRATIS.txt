@@ -1,0 +1,39 @@
+COMO PUBLICAR O FIRESEEKER GRATUITAMENTE
+
+O projeto foi construído utilizando Vite + React, o que significa que ele gera arquivos estáticos super otimizados. Você pode hospedá-lo de graça em várias plataformas excelentes.
+
+---------------------------------------------------------
+OPÇÃO 1: VERCEL (Recomendado - Mais fácil e rápido)
+---------------------------------------------------------
+1. Crie uma conta em https://vercel.com/ (use seu GitHub).
+2. Suba o código deste projeto para um repositório no GitHub.
+3. No painel da Vercel, clique em "Add New..." -> "Project".
+4. Importe o seu repositório do GitHub.
+5. A Vercel detectará automaticamente que é um projeto Vite/React.
+6. Clique em "Deploy". 
+7. Em 2 minutos seu site estará online com um link como: fireseeker-prototype.vercel.app
+
+---------------------------------------------------------
+OPÇÃO 2: NETLIFY (Ótima alternativa)
+---------------------------------------------------------
+1. Crie uma conta em https://www.netlify.com/
+2. No seu Dashboard, clique em "Add new site" -> "Import an existing project".
+3. Conecte com seu GitHub e selecione o repositório.
+4. As configurações padrão (Build command: `npm run build`, Publish directory: `dist`) já estarão corretas.
+5. Clique em "Deploy site".
+
+---------------------------------------------------------
+OPÇÃO 3: GITHUB PAGES
+---------------------------------------------------------
+1. Suba seu código para o GitHub.
+2. No seu arquivo `vite.config.ts`, adicione `base: '/nome-do-seu-repositorio/'`.
+3. Rode `npm run build` no seu terminal local.
+4. Você pode usar a biblioteca `gh-pages` para fazer o deploy da pasta `dist` facilmente:
+   - `npm install gh-pages --save-dev`
+   - Adicione no package.json em scripts: `"deploy": "gh-pages -d dist"`
+   - Rode `npm run deploy`
+5. Vá nas Settings do seu repositório no GitHub -> Pages, e garanta que está apontando para a branch gh-pages.
+
+DICA DE OURO PARA BANCAS E INVESTIDORES:
+Compre um domínio personalizado barato (ex: .co, .tech, .io) no Namecheap ou Hostinger (custa cerca de R$ 15 a R$ 50 no primeiro ano) e conecte-o na Vercel. 
+Apresentar o projeto rodando em `https://fireseeker.tech` ao invés de `localhost` aumenta a percepção de valor do produto em 1000%.
